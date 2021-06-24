@@ -1,1 +1,113 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+header {
+  position: relative;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: -100vh;
+  text-align: center;
+}
+
+header .mobileMenuSvg {
+  background-image: url("../images/icon-hamburger.svg");
+  width: 32px;
+  height: 32px;
+}
+
+header.mobileMenu {
+  position: relative;
+}
+
+header.mobileMenu nav {
+  display: block;
+  background-color: #2b272f;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+header.mobileMenu nav::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/bg-pattern-mobile-nav.svg");
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  z-index: 0;
+}
+
+header.mobileMenu nav a {
+  display: block;
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+header.mobileMenu nav button {
+  color: #fafafa;
+  padding: 1rem;
+  border: 1px solid #fafafa;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 90%;
+}
+
+header.mobileMenu .mobileMenuSvg {
+  background-image: url("../images/icon-close.svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+p,
+a,
+h3,
+button {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+.openMenu {
+  overflow: hidden;
+}
+/*# sourceMappingURL=main.css.map */

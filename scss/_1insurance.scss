@@ -1,0 +1,136 @@
+section#insurance {
+  background-color: $darkViolet;
+  color: $veryLightGray;
+  text-align: center;
+  .img {
+    content: "";
+    height: 451px;
+    width: 100%;
+    background-image: url("../images/image-intro-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .textBlock {
+    position: relative;
+    padding: 5rem 2rem;
+    text-align: center;
+    z-index: 10;
+
+    h1 {
+      font-size: 2.7rem;
+      line-height: 45px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      line-height: 25px;
+      margin-bottom: 2rem;
+    }
+    button {
+      @include buttonStyle;
+      @include hoverClickButton;
+      font-size: 1rem;
+    }
+
+    &::before {
+      @include pseudoSetup;
+      background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+    }
+
+    &::after {
+      @include pseudoSetup;
+      background-image: url("../images/bg-pattern-intro-right-mobile.svg");
+      background-position: right bottom;
+      bottom: -39%;
+    }
+  }
+
+  @media screen and(min-width: 40rem) {
+    .img {
+      background-image: url("../images/image-intro-desktop.jpg");
+      height: 650px;
+    }
+
+    .textBlock {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media screen and(min-width: 64rem) {
+    position: relative;
+    padding: 0 8rem;
+
+    display: grid;
+    justify-items: center;
+    align-items: top;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "text image";
+    gap: 3rem;
+
+    text-align: left;
+
+    &::before {
+      @include pseudoSetup;
+      background-image: url("../images/bg-pattern-intro-left-desktop.svg");
+      height: 0100%;
+      top: 21rem;
+      z-index: 0;
+    }
+
+    &::after {
+      @include pseudoSetup;
+      background-image: url("../images/bg-pattern-intro-right-desktop.svg");
+      background-position: right center;
+      z-index: 0;
+    }
+
+    .img {
+      grid-area: image;
+      height: 110%;
+      background-size: contain;
+      background-position-y: top;
+      position: relative;
+      top: 5rem;
+      left: 0;
+      right: 0;
+    }
+
+    .textBlock {
+      grid-area: text;
+      padding: 5rem 0;
+      text-align: left;
+
+      .topLine {
+        @include topLine;
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 2rem;
+      }
+
+      h1,
+      p {
+        text-align: left;
+      }
+
+      &::before,
+      &::after {
+        content: unset;
+        display: none;
+        background-image: unset;
+      }
+    }
+  }
+
+  @media screen and(min-width: 80rem) {
+    .img {
+      background-size: cover;
+      background-position-y: center;
+    }
+  }
+}

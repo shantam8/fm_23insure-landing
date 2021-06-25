@@ -1,17 +1,103 @@
+@mixin buttonStyle($color: $veryLightGray) {
+  color: $color;
+  padding: 1rem;
+  border: 2px solid $color;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+@mixin pseudoSetup {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+}
+
+@mixin topLine {
+  height: 2px;
+  width: 10rem;
+  background-color: lightgrey;
+  margin: 0 auto;
+}
+
+@mixin hoverClickBottomLink {
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    border-color: black;
+  }
+
+  &:active {
+    transition: all 0s ease;
+    color: red;
+    border-color: red;
+  }
+}
+
+@mixin hoverClickTopLink {
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
+
+  &:active {
+    transition: all 0s ease;
+    color: red;
+  }
+}
 
 
-@mixin buttonStyle($color :$veryLightGray){
+@mixin hoverClickButton {
+    transition: all 0.5s ease;
+  
+    &:hover {
+        color: $darkViolet;
+      cursor: pointer;
+      border-color: $veryLightGray;
+      background-color: $veryLightGray;
+    }
+  
+    &:active {
+      transition: all 0s ease;
+      border-color: red;
+      background-color: red;
+    }
+  }
 
-    color: $color;
-    padding: 1rem;
-    border: 1px solid $color;
+@mixin hoverCLickSocialMedia {
+  svg path {
+    transition: all 0.5s ease;
+  }
 
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    font-weight: 700;
-padding: 1rem;
+  &:hover {
+    cursor: pointer;
+    svg path {
+      fill: $darkViolet;
+    }
+  }
 
-background-color: transparent;
+  &:active {
+    svg path {
+      transition: all 0s ease;
+      fill: red;
+    }
+  }
+}
 
-
+@mixin mobileMenuClickEvent{
+  &:active {
+    transition: all 0s ease;
+    border-color: red;
+    background-color: red;
+  }
 }

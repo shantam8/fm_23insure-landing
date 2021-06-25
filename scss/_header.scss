@@ -1,68 +1,148 @@
 header {
   position: relative;
-  padding: 2rem;
-
+  margin: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   nav {
+    width: 100vw;
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 200%;
+    left: -2rem;
     right: 0;
-    bottom: -100vh;
+    bottom: -94vh;
     text-align: center;
   }
 
   .mobileMenuSvg {
-    background-image: url("../images/icon-hamburger.svg");
     width: 32px;
     height: 32px;
+    background-image: url("../images/icon-hamburger.svg");
   }
 
   &.mobileMenu {
     position: relative;
+    z-index: 80;
 
     nav {
       display: block;
-      background-color: $veryDarkViolet;
-      text-align: center;
       padding-top: 1rem;
+      text-align: center;
+      background-color: $veryDarkViolet;
 
       &::after {
         position: absolute;
         content: "";
-        background-image: url("../images/bg-pattern-mobile-nav.svg");
         bottom: 0;
         left: 0;
         right: 0;
         top: 0;
+        background-image: url("../images/bg-pattern-mobile-nav.svg");
         background-repeat: no-repeat;
         background-position-y: bottom;
+        background-size: contain;
         z-index: 0;
       }
 
       a {
+        @include mobileMenuClickEvent;
         display: block;
+        position: relative;
+        margin: 1rem;
+        padding: 1rem;
         color: white;
         font-weight: 700;
-        padding: 1rem;
-        margin: 1rem 1rem 1rem 1rem;
         font-size: 1.3rem;
         letter-spacing: 1px;
+        z-index: 10;
       }
 
-      button{
-          @include buttonStyle;
-          margin: 0 auto;
-          width: 90%;
+      button {
+        @include buttonStyle;
+        @include mobileMenuClickEvent;
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+        z-index: 10;
       }
     }
 
     .mobileMenuSvg {
       background-image: url("../images/icon-close.svg");
+    }
+  }
+
+  @media screen and(min-width:40rem) {
+    .mobileMenuSvg {
+      display: none;
+    }
+
+    nav {
+      display: inline;
+      position: static;
+
+      &::after {
+        background-image: unset;
+        position: unset;
+      }
+
+      a {
+        @include hoverClickTopLink;
+        margin: 0.5rem;
+        padding: 0;
+        color: $darkGrayishViolet;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+
+      button {
+        @include buttonStyle;
+        margin: 0 auto;
+        margin-left: 0;
+        border: 2px solid black;
+        color: black;
+        font-size: 1rem;
+
+        transition: all 0.5s ease;
+
+        &:hover {
+          cursor: pointer;
+          color: white;
+          border-color: black;
+          background-color: black;
+        }
+
+        &:active {
+          transition: all 0s ease;
+          border-color: red;
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  @media screen and(min-width:50rem) {
+    margin-left: 4rem;
+    margin-right: 4rem;
+
+    nav {
+      width: unset;
+
+      a {
+        margin: 1rem;
+      }
+    }
+  }
+
+  @media screen and(min-width:64rem) {
+    margin-left: 8rem;
+    margin-right: 8rem;
+
+    nav button {
+      margin-left: 2rem;
     }
   }
 }

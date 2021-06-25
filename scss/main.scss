@@ -21,21 +21,28 @@ h1,
 h2 {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
+  text-align: center;
 }
 
-p,
 a,
 h3,
 button {
   font-family: "Karla", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
 }
 
-a{
+p {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+a {
   text-decoration: none;
 }
 
-.openMenu{
+.openMenu {
   overflow: hidden;
 }
